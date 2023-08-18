@@ -1,9 +1,11 @@
 package com.isaacyakl.pleasanthollow.domain.properties;
 
-import com.isaacyakl.pleasanthollow.domain.template.Object;
+import com.isaacyakl.pleasanthollow.domain.templates.Object;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-@Entity
+//@Entity
+//@Table(name = "mailing_addresses")
 public class MailingAddress extends Object {
     private String street;
     private String street2;

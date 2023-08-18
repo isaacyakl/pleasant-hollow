@@ -1,17 +1,15 @@
-package com.isaacyakl.pleasanthollow.domain.template;
+package com.isaacyakl.pleasanthollow.domain.templates;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-
+import jakarta.persistence.MappedSuperclass;
 
 import java.util.Date;
 import java.util.UUID;
 
-
 import static jakarta.persistence.GenerationType.UUID;
 
-@Entity
+@MappedSuperclass
 public class Object {
     @Id
     @GeneratedValue(strategy = UUID)

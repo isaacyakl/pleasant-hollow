@@ -1,8 +1,9 @@
-package com.isaacyakl.pleasanthollow.domain.template;
+package com.isaacyakl.pleasanthollow.domain.templates;
 
-import jakarta.persistence.Entity;
+import com.isaacyakl.pleasanthollow.domain.AccessEvent;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 public class SocialObject extends Object {
     private Integer viewCount;
     private Integer upvoteCount;

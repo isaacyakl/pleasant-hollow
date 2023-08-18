@@ -1,6 +1,6 @@
 package com.isaacyakl.pleasanthollow.domain;
 
-import com.isaacyakl.pleasanthollow.domain.template.Object;
+import com.isaacyakl.pleasanthollow.domain.templates.Object;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
