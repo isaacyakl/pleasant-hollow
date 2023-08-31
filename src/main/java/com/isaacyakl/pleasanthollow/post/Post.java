@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Post extends Object {
-    @NotBlank
+    @NotBlank(message = "Body is required")
     private String body;
 }
