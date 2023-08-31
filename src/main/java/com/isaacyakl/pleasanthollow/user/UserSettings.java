@@ -1,10 +1,10 @@
-package com.isaacyakl.pleasanthollow.domain;
+package com.isaacyakl.pleasanthollow.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import lombok.Data;
 
 //@Entity
 //@Table(name = "user_settings")
+@Data
 public class UserSettings {
     private Boolean[] notifyBy; // email, sms, push
 }

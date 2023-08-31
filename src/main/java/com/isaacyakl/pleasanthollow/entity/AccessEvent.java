@@ -1,15 +1,15 @@
-package com.isaacyakl.pleasanthollow.domain;
+package com.isaacyakl.pleasanthollow.entity;
 
-import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.UUID;
 
 //@Entity
 //@Table(name = "access_events")
-public class AccessEvent
-{
-//    @Id
+@Data
+public class AccessEvent {
+    //    @Id
 //    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID accessedBy;

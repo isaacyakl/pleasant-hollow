@@ -1,11 +1,12 @@
-package com.isaacyakl.pleasanthollow.domain.properties;
+package com.isaacyakl.pleasanthollow.entity.properties;
 
-import com.isaacyakl.pleasanthollow.domain.templates.Object;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.isaacyakl.pleasanthollow.entity.Object;
+
+import lombok.Data;
 
 //@Entity
 //@Table(name = "mailing_addresses")
+@Data
 public class MailingAddress extends Object {
     private String street;
     private String street2;

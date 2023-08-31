@@ -1,13 +1,16 @@
-package com.isaacyakl.pleasanthollow.domain.templates;
+package com.isaacyakl.pleasanthollow.entity;
 
-import com.isaacyakl.pleasanthollow.domain.properties.EmailAddress;
-import com.isaacyakl.pleasanthollow.domain.properties.MailingAddress;
-import com.isaacyakl.pleasanthollow.domain.properties.PhoneNumber;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Data;
 
 import java.util.Date;
 
+import com.isaacyakl.pleasanthollow.entity.properties.EmailAddress;
+import com.isaacyakl.pleasanthollow.entity.properties.MailingAddress;
+import com.isaacyakl.pleasanthollow.entity.properties.PhoneNumber;
+
 @MappedSuperclass
+@Data
 public class Person extends Object {
     private String firstName;
     private char[] middleInitial = new char[1];
