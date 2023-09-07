@@ -1,6 +1,5 @@
 package com.isaacyakl.pleasanthollow.post;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.isaacyakl.pleasanthollow.error.PostNotFoundException;
+import com.isaacyakl.pleasanthollow.Constants;
 
 import jakarta.validation.Valid;
 
@@ -20,11 +20,17 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post createPost(Post post) {
-        return postRepository.save(post);
+        Post validatedPost = post;
+        // Make sure the view and upvote counts are set to defaults and not something
+        // else that the client sends.
+        validatedPost.setViewCount(Constants.DEFAULT_VIEW_COUNT);
+        validatedPost.setUpvoteCount(Constants.DEFAULT_UPVOTE_COUNT);
+        return postRepository.save(validatedPost);
     }
 
     @Override
     public Post fetchPostByUUID(UUID postUUID) throws PostNotFoundException {
+        // View count should only be incremented by fetchPostByUUID calls
         Optional<Post> post = postRepository.findById(postUUID);
         if (!post.isPresent())
             throw new PostNotFoundException("Post with UUID " + postUUID + " not found.");
@@ -42,12 +48,22 @@ public class PostServiceImpl implements PostService {
         if (!currentPost.isPresent())
             throw new PostNotFoundException("Post with UUID " + postUUID + " not found.");
         Post updatedPost = currentPost.get();
-        if (Objects.nonNull(postUpdate.getTitle()) && !"".equalsIgnoreCase(postUpdate.getTitle()))
-            updatedPost.setTitle(postUpdate.getTitle());
+        // Title should not be editable by users
+        /*
+         * if (Objects.nonNull(postUpdate.getTitle()) &&
+         * !"".equalsIgnoreCase(postUpdate.getTitle()))
+         * updatedPost.setTitle(postUpdate.getTitle());
+         */
+        // Edit body
         if (Objects.nonNull(postUpdate.getBody()) && !"".equalsIgnoreCase(postUpdate.getBody()))
             updatedPost.setBody(postUpdate.getBody());
+        // Edit isEnabled
         if (Objects.nonNull(postUpdate.getIsEnabled()))
             updatedPost.setIsEnabled(postUpdate.getIsEnabled());
+        // Edit categoryId
+        if (Objects.nonNull(postUpdate.getCategoryId()))
+            updatedPost.setCategoryId(postUpdate.getCategoryId());
+        // Upvotes should be updated using this method
         return postRepository.save(updatedPost);
     }
 

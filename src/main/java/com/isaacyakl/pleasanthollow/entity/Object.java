@@ -7,11 +7,13 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @MappedSuperclass
 @Data
+@NoArgsConstructor
 public class Object {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -34,4 +36,12 @@ public class Object {
     @NotBlank(message = "Title is required")
     private String title;
     private String description;
+
+    public Object(UUID parentUuid, @NotNull(message = "isEnabled is required") Boolean isEnabled,
+            @NotBlank(message = "Title is required") String title, String description) {
+        this.parentId = parentUuid;
+        this.isEnabled = isEnabled;
+        this.title = title;
+        this.description = description;
+    }
 }

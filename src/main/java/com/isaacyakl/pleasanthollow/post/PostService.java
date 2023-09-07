@@ -8,13 +8,13 @@ import com.isaacyakl.pleasanthollow.error.PostNotFoundException;
 import jakarta.validation.Valid;
 
 public interface PostService {
-    public Post createPost(Post post);
+    Post createPost(Post post);
 
-    public Post fetchPostByUUID(UUID postUUID) throws PostNotFoundException;
+    Post fetchPostByUUID(UUID postUUID) throws PostNotFoundException;
 
-    public List<Post> fetchPosts();
+    List<Post> fetchPosts();
 
-    public Post updatePost(UUID postUUID, @Valid Post postUpdate) throws PostNotFoundException;
+    Post updatePost(UUID postUUID, @Valid Post postUpdate) throws PostNotFoundException;
 
-    public void deletePost(UUID postUUID) throws PostNotFoundException;
+    void deletePost(UUID postUUID) throws PostNotFoundException;
 }
