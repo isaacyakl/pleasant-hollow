@@ -1,6 +1,6 @@
 # Pleasant Hollow
 
-End-to-end secure modern discussion board.
+An end-to-end secure modern discussion board.
 
 -  End-to-end encryption
 -  Encrypted data at rest
