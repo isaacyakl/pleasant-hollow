@@ -1,27 +1,32 @@
+/* https://coolors.co/14281d-355834-6e633d-c2a878-f1f5f2 */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 20, 40, 29;
+	--background-start-rgb: 194, 168, 120;
+	--background-end-rgb: 241, 245, 242;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 241, 245, 242;
+		--background-start-rgb: 20, 40, 29;
+		--background-end-rgb: 53, 88, 52;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+p {
+	margin-bottom: 0.25rem;
+}
+
+input {
+	color: black;
 }

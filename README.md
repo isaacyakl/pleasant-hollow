@@ -7,7 +7,8 @@ An end-to-end secure modern discussion board.
 
 ## Todo
 
--  Implement auditing (CreatedBy/On, LastModifiedBy/On) in Object class
+-  Add API endpoints to fetchPostsByCategory, fetchRepliesByPost, fetchCategoriesByParentCategory
+-  Implement backend auditing (CreatedBy/On, LastModifiedBy/On) in Object class
 -  Paginate readPosts()
 -  Track read/unread categories and posts by storing UUIDs in user?
 -  Add privileged categories with more security
