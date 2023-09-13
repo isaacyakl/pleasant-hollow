@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.isaacyakl.pleasanthollow.api.Constants;
 import com.isaacyakl.pleasanthollow.api.error.CategoryNotFoundException;
+import com.isaacyakl.pleasanthollow.api.post.Post;
+import com.isaacyakl.pleasanthollow.api.post.PostService;
 
 import jakarta.validation.Valid;
 
@@ -23,6 +25,9 @@ import jakarta.validation.Valid;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private PostService postService;
 
     @PostMapping
     public Category createCategory(@Valid @RequestBody Category category) {
@@ -34,9 +39,21 @@ public class CategoryController {
         return categoryService.fetchCategoryByUUID(categoryUUID);
     }
 
+    @GetMapping("/{categoryUUID}/posts")
+    public List<Post> readCategoryPosts(@PathVariable("categoryUUID") UUID categoryUUID)
+            throws CategoryNotFoundException {
+        return postService.fetchCategoryPosts(categoryUUID);
+    }
+
     @GetMapping
     public List<Category> readCategories() {
         return categoryService.fetchCategories();
+    }
+
+    @GetMapping("/{categoryUUID}/subcategories")
+    public List<Category> readSubCategories(@PathVariable("categoryUUID") UUID categoryUUID)
+            throws CategoryNotFoundException {
+        return categoryService.fetchCategoryChildren(categoryUUID);
     }
 
     @PutMapping("/{categoryUUID}")

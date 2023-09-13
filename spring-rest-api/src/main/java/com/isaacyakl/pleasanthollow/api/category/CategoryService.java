@@ -14,6 +14,8 @@ public interface CategoryService {
 
     List<Category> fetchCategories();
 
+    List<Category> fetchCategoryChildren(UUID parentId);
+
     Category updateCategory(UUID categoryUUID, @Valid Category categoryUpdate) throws CategoryNotFoundException;
 
     void deleteCategory(UUID categoryUUID) throws CategoryNotFoundException;

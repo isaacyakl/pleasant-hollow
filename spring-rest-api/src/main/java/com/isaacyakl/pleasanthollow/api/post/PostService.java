@@ -14,6 +14,10 @@ public interface PostService {
 
     List<Post> fetchPosts();
 
+    List<Post> fetchCategoryPosts(UUID categoryId);
+
+    List<Post> findPostReplies(UUID parentId);
+
     Post updatePost(UUID postUUID, @Valid Post postUpdate) throws PostNotFoundException;
 
     void deletePost(UUID postUUID) throws PostNotFoundException;

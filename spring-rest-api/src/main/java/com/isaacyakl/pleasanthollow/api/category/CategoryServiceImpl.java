@@ -71,4 +71,9 @@ public class CategoryServiceImpl implements CategoryService {
         categoryRepository.deleteById(categoryUUID);
     }
 
+    @Override
+    public List<Category> fetchCategoryChildren(UUID parentId) {
+        return categoryRepository.findByParentId(parentId);
+    }
+
 }

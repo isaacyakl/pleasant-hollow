@@ -34,6 +34,11 @@ public class PostController {
         return postService.fetchPostByUUID(postUUID);
     }
 
+    @GetMapping("/{postUUID}/replies")
+    public List<Post> readPostReplies(@PathVariable("postUUID") UUID postUUID) throws PostNotFoundException {
+        return postService.findPostReplies(postUUID);
+    }
+
     @GetMapping
     public List<Post> readPosts() {
         return postService.fetchPosts();

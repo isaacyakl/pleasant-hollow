@@ -74,4 +74,17 @@ public class PostServiceImpl implements PostService {
             throw new PostNotFoundException("Post with UUID " + postUUID + " not found.");
         postRepository.deleteById(postUUID);
     }
+
+    @Override
+    public List<Post> fetchCategoryPosts(UUID categoryId) {
+        List<Post> posts = postRepository.findByCategoryId(categoryId);
+        return posts;
+    }
+
+    @Override
+    public List<Post> findPostReplies(UUID parentId) {
+        List<Post> posts = postRepository.findByParentId(parentId);
+        return posts;
+    }
+
 }
