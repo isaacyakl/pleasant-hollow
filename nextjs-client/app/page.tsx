@@ -16,7 +16,9 @@ export default function Home() {
 				throw new Error("Failed to fetch data");
 			}
 
-			setCategories(await res.json());
+			const returnedCategories = await res.json();
+			const parentCategories = returnedCategories.filter((category: Category) => category.parentId === "" || category.parentId === null);
+			setCategories(parentCategories);
 		};
 		getCategories();
 	}, []);
@@ -36,7 +38,7 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
-			<div className="w-full flex flex-col items-start justify-start p-2">{categories.length === 0 ? "Couldn't retrieve any categories." : categories.map((category: any) => <ListedCategory key={category.id} id={category.id} title={category.title} description={category.description} />)}</div>
+			<div className="w-full flex flex-col items-start justify-start p-2">{categories.length === 0 ? "Retrieving categories..." : categories.map((category: Category) => <ListedCategory key={category.id} category={category} />)}</div>
 		</main>
 	);
 }
