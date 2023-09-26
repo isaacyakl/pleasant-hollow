@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.isaacyakl.pleasanthollow.api.Constants;
-import com.isaacyakl.pleasanthollow.api.error.PostNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.PostNotFoundException;
 
 import jakarta.validation.Valid;
 

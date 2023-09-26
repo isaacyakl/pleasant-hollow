@@ -1,13 +1,13 @@
-package com.isaacyakl.pleasanthollow.api.entity;
+package com.isaacyakl.pleasanthollow.api.entities;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 
 import java.util.Date;
 
-import com.isaacyakl.pleasanthollow.api.entity.properties.EmailAddress;
-import com.isaacyakl.pleasanthollow.api.entity.properties.MailingAddress;
-import com.isaacyakl.pleasanthollow.api.entity.properties.PhoneNumber;
+import com.isaacyakl.pleasanthollow.api.entities.attributes.EmailAddress;
+import com.isaacyakl.pleasanthollow.api.entities.attributes.MailingAddress;
+import com.isaacyakl.pleasanthollow.api.entities.attributes.PhoneNumber;
 
 @MappedSuperclass
 @Data

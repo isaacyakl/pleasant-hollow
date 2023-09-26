@@ -1,6 +1,6 @@
-package com.isaacyakl.pleasanthollow.api.entity.properties;
+package com.isaacyakl.pleasanthollow.api.entities.attributes;
 
-import com.isaacyakl.pleasanthollow.api.entity.Object;
+import com.isaacyakl.pleasanthollow.api.entities.Object;
 
 import lombok.Data;
 

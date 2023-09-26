@@ -1,7 +1,7 @@
 package com.isaacyakl.pleasanthollow.api.user;
 
-import com.isaacyakl.pleasanthollow.api.entity.Person;
-import com.isaacyakl.pleasanthollow.api.entity.properties.Link;
+import com.isaacyakl.pleasanthollow.api.entities.Person;
+import com.isaacyakl.pleasanthollow.api.entities.attributes.Link;
 
 import lombok.Data;
 

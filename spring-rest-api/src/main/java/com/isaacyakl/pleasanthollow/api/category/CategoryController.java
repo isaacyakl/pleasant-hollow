@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.isaacyakl.pleasanthollow.api.Constants;
-import com.isaacyakl.pleasanthollow.api.error.CategoryNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.CategoryNotFoundException;
 import com.isaacyakl.pleasanthollow.api.post.Post;
 import com.isaacyakl.pleasanthollow.api.post.PostService;
 

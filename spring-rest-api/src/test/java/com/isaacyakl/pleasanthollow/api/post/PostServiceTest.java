@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.isaacyakl.pleasanthollow.api.error.PostNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.PostNotFoundException;
 
 @SpringBootTest
 public class PostServiceTest {

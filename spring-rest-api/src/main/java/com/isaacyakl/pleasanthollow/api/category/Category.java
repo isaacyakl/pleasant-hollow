@@ -1,7 +1,7 @@
 package com.isaacyakl.pleasanthollow.api.category;
 
 import com.isaacyakl.pleasanthollow.api.Constants;
-import com.isaacyakl.pleasanthollow.api.entity.Object;
+import com.isaacyakl.pleasanthollow.api.entities.Object;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

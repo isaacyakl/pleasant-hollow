@@ -3,7 +3,7 @@ package com.isaacyakl.pleasanthollow.api.post;
 import java.util.List;
 import java.util.UUID;
 
-import com.isaacyakl.pleasanthollow.api.error.PostNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.PostNotFoundException;
 
 import jakarta.validation.Valid;
 

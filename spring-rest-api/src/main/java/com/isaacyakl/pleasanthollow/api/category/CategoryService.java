@@ -3,7 +3,7 @@ package com.isaacyakl.pleasanthollow.api.category;
 import java.util.List;
 import java.util.UUID;
 
-import com.isaacyakl.pleasanthollow.api.error.CategoryNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.CategoryNotFoundException;
 
 import jakarta.validation.Valid;
 

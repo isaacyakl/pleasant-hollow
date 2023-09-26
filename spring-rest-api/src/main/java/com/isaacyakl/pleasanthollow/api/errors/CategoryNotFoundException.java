@@ -1,4 +1,4 @@
-package com.isaacyakl.pleasanthollow.api.error;
+package com.isaacyakl.pleasanthollow.api.errors;
 
 public class CategoryNotFoundException extends Exception {
     public CategoryNotFoundException(String errorMessage) {

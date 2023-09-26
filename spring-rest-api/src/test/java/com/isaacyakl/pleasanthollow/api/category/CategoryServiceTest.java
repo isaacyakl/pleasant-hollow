@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.isaacyakl.pleasanthollow.api.error.CategoryNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.CategoryNotFoundException;
 
 @SpringBootTest
 public class CategoryServiceTest {

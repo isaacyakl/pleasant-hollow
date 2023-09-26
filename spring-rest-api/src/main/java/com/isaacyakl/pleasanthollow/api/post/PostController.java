@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.isaacyakl.pleasanthollow.api.Constants;
-import com.isaacyakl.pleasanthollow.api.error.PostNotFoundException;
+import com.isaacyakl.pleasanthollow.api.errors.PostNotFoundException;
 
 import jakarta.validation.Valid;
 

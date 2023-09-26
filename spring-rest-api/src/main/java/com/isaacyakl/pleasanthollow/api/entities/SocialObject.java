@@ -1,4 +1,4 @@
-package com.isaacyakl.pleasanthollow.api.entity;
+package com.isaacyakl.pleasanthollow.api.entities;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
